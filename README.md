@@ -17,3 +17,6 @@
 
 6. Running Test
     - rails test
+
+7. Sample Output
+    - https://sleepy-sierra-03926.herokuapp.com/

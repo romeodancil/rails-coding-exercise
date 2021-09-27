@@ -1,24 +1,16 @@
-# README
+# Rails Coding Exercise
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Ruby Version
+    - ruby-3.0.2
 
-Things you may want to cover:
+2. Rails Version
+    - 6.1.4.1
 
-* Ruby version
+3. Install Dependencies
+    - bundle install --without production
 
-* System dependencies
+4. Run migration
+    - rails db:migrate
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+5. Run local server
+    - rails s

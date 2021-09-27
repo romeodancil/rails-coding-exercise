@@ -14,3 +14,6 @@
 
 5. Run local server
     - rails s
+
+6. Running Test
+    - rails test

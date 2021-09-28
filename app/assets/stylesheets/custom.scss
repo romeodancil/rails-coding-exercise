@@ -111,10 +111,18 @@ table {
 
         &.delete {
             text-align: left;
+            width: 0;
+        }
+        &.view {
+            text-align: left;
         }
     }
 }
 
 .add-new-products {
     margin-top: 37px;
+}
+
+.show-product-info {
+    margin-top: 40px;
 }

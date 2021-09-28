@@ -10,6 +10,10 @@ class ProductsController < ApplicationController
     end
 
     def show
+        @criteria = Criteria.find_by("criteria like ? and criteria like ?", "%#{@product.reference}%", "%#{@product.category}%")
+        if @criteria == nil
+            @criteria = Criteria.find_by("criteria like ? or criteria like ?", "%#{@product.reference}%", "%#{@product.category}%")
+        end
     end
 
     def edit
@@ -46,7 +50,15 @@ class ProductsController < ApplicationController
     private
 
     def set_product
-        @product = Product.find(params[:id])
+        id = params[:id]
+        reference = params[:reference]
+        
+        if reference
+            @product = Product.find_by(reference: reference.delete(" "))
+        else
+            @product = Product.find(id)
+        end
+
     end
 
     def product_params

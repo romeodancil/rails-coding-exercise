@@ -1,6 +1,14 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
     <%= link_to "Warehouse", root_path, id: "logo" %>
+
+    <%= form_with url: "/search", method: :get, html: { class: "navbar-form navbar-left"} do |form| %>
+        <div class="form-group">
+            <%= form.text_field :reference, class: "form-control", placeholder: "Enter Product Reference" %>
+        </div>
+        <%= form.submit "Search", class: "btn btn-primary" %>
+    <% end %>
+
     <nav>
         <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Products", root_path %></li>

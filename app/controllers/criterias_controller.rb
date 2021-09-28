@@ -1,5 +1,5 @@
 class CriteriasController < ApplicationController
-    before_action :set_criteria, only: %i[ show edit update destroy]
+    before_action :set_criteria, only: %i[ edit update destroy]
     
     def index
         @criterias = Criteria.all
@@ -10,9 +10,6 @@ class CriteriasController < ApplicationController
     end
 
     def edit
-    end
-
-    def show
     end
 
     def update

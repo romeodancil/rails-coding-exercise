@@ -1,0 +1,26 @@
+<%= render 'shared/errors', obj: @criteria %>
+
+<div class="row product-form">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"><%= @criteria.new_record? ? 'Create' : 'Update' %> Criteria</h3>
+            </div>
+            <div class="panel-body">
+                <%= form_with(model: @criteria, url: url) do |form| %>
+                    <div class="form-group">
+                        <%= form.label :distination %>
+                        <%= form.text_field :distination , class: "form-control", placeholder: "Distination", :required=>true %>
+                    </div>
+                    <div class="form-group">
+                        <%= form.label :criteria %>
+                        <%= form.text_area :criteria , class: "form-control", placeholder: "Criteria", :required=>true %>
+                    </div>
+                    <hr/>
+                    <%= form.submit class: "btn btn-primary" %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

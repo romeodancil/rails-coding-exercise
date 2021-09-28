@@ -1,3 +1,46 @@
 <% provide(:title, "Criteria Lists") %>
 
-<h3>Criterias <b>In Progress</b></h3>
+<% if notice %>
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <%= notice %>
+    </div>
+<% end %>
+
+<div class="center jumbotron">
+    <div class="row">
+        <div class="col-md-3 add-new-products">
+            <%= link_to 'Add New Products Criteria', new_criteria_path, class: "btn btn-primary btn-sm" %>
+        </div>
+        <div class="col-md-6">
+            <h1>Criteria List</h1>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Distination</th>
+                    <th scope="col">Criteria</th>
+                    <th scope="col" colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @criterias.each do |c| %>
+                    <tr>
+                        <th scope="row"> <%= c.distination %> </td>
+                        <td><%= c.criteria %> </td>
+                        <td class="edit">
+                            <%= link_to 'Edit', edit_criteria_path(c), class: "btn btn-primary btn-sm" %>
+                        </td>
+                        <td class="delete">
+                            <%= link_to 'Destroy', criteria_path(c), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+                        </td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </table>
+</div>

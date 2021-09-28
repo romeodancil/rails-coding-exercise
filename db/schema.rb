@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_27_143111) do
+ActiveRecord::Schema.define(version: 2021_09_28_111327) do
 
-  create_table "criterias", force: :cascade do |t|
-    t.string "distination"
+  create_table "criteria", force: :cascade do |t|
+    t.text "distination"
     t.string "criteria"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
